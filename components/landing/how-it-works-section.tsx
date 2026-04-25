@@ -7,14 +7,12 @@ const steps = [
     number: "01",
     title: "Download",
     subtitle: "the ISO",
-    description: "Get the latest Hidayah OS ISO from GitHub Releases. Verify the SHA256 checksum to ensure integrity and authenticity.",
-    code: `# Download Hidayah OS v1.0
-$ wget https://github.com/hidayahos/hidayah-os/\
-  releases/download/v1.0/hidayah-os-1.0.iso
+    description: "Get Hidayah OS v1.0 (Nur) from the official MEGA link. Verify the SHA256 checksum to ensure integrity and authenticity.",
+    code: `# Download Hidayah OS v1.0 (Nur)
+$ wget "https://mega.co.nz/#!o0omCQYb!YLCm-DmbXumGnUaXUheyvxldTwZk2HEul8BGFCEWd98"
 
 # Verify SHA256
-$ sha256sum hidayah-os-1.0.iso
-$ cat SHA256SUMS | grep hidayah-os-1.0.iso`,
+$ echo "2fe5bb6152bae474f2719ef6b2edf74b8b958d433fa9451fa7ecec714a3ea04d  hidayah-os-1.0-nur-amd64.iso" | sha256sum -c`,
   },
   {
     number: "02",
@@ -22,7 +20,7 @@ $ cat SHA256SUMS | grep hidayah-os-1.0.iso`,
     subtitle: "to your device",
     description: "Boot from USB using the Calamares installer. It guides you through setup including Guardian PIN configuration for settings protection.",
     code: `# Write to USB (Linux/Mac)
-$ sudo dd if=hidayah-os-1.0.iso of=/dev/sdX \
+$ sudo dd if=hidayah-os-1.0-nur-amd64.iso of=/dev/sdX \
   bs=4M status=progress
 
 # Write to USB (Windows)

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, FileText, ShieldCheck, HardDrive } from "lucide-react";
 
 const systemRequirements = [
   { label: "Minimum RAM", value: "4GB" },
@@ -53,15 +53,37 @@ export function PricingSection() {
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 Hidayah OS is completely free and open source under the GPL-3.0 license. Download, install, and run your own OS aligned with your values.
               </p>
-              <a 
-                href="https://github.com/hidayahos/hidayah-os/releases" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent/90 text-background font-display text-lg transition-all group"
-              >
-                Download Hidayah OS v1.0
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </a>
+              <div className="flex flex-col gap-6">
+                <a
+                  href="https://mega.co.nz/#!o0omCQYb!YLCm-DmbXumGnUaXUheyvxldTwZk2HEul8BGFCEWd98"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent/90 text-background font-display text-lg transition-all group"
+                >
+                  Download v1.0 (Nur)
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </a>
+
+                <div className="space-y-3 font-mono text-xs text-muted-foreground bg-foreground/5 p-4 border border-foreground/10">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-accent" />
+                    <span>SHA256: 2fe5bb6152bae474f2719ef6b2edf74b8b958d433fa9451fa7ecec714a3ea04d</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FileText className="w-4 h-4 text-accent" />
+                    <span>Filename: hidayah-os-1.0-nur-amd64.iso</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <HardDrive className="w-4 h-4 text-accent" />
+                    <span>Size: 2.04 GB</span>
+                  </div>
+                </div>
+
+                <div className="space-y-2 font-mono text-[10px] text-muted-foreground/60">
+                  <p>Verify on Linux/Mac: <code className="text-accent/80">sha256sum hidayah-os-1.0-nur-amd64.iso</code></p>
+                  <p>Verify on Windows: <code className="text-accent/80">certutil -hashfile hidayah-os-1.0-nur-amd64.iso SHA256</code></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -147,12 +169,12 @@ export function PricingSection() {
               Download the ISO, verify the checksum, write it to a USB, and boot. The Calamares installer will guide you through the rest.
             </p>
             <a 
-              href="https://github.com/hidayahos/hidayah-os/releases" 
+              href="https://mega.co.nz/#!o0omCQYb!YLCm-DmbXumGnUaXUheyvxldTwZk2HEul8BGFCEWd98"
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-mono underline underline-offset-4 transition-colors"
             >
-              View Releases on GitHub
+              Download v1.0 (Nur)
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

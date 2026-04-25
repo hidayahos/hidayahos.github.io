@@ -62,7 +62,7 @@ export function CtaSection() {
 
                 <div className="flex flex-col sm:flex-row items-start gap-4">
                   <a 
-                    href="https://github.com/hidayahos/hidayah-os/releases"
+                    href="https://mega.co.nz/#!o0omCQYb!YLCm-DmbXumGnUaXUheyvxldTwZk2HEul8BGFCEWd98"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -70,7 +70,7 @@ export function CtaSection() {
                       size="lg"
                       className="bg-accent hover:bg-accent/90 text-background px-8 h-14 text-base rounded-full group"
                     >
-                      Download Hidayah OS v1.0
+                      Download v1.0 (Nur)
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </a>

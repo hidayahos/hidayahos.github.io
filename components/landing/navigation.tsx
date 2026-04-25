@@ -23,6 +23,10 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleDownloadClick = () => {
+    window.open("https://mega.co.nz/#!o0omCQYb!YLCm-DmbXumGnUaXUheyvxldTwZk2HEul8BGFCEWd98", "_blank");
+  };
+
   return (
     <header
       className={`fixed z-50 transition-all duration-500 ${
@@ -76,6 +80,7 @@ export function Navigation() {
               variant="glow"
               size="sm"
               className={`rounded-xl transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
+              onClick={handleDownloadClick}
             >
               Download
             </Button>
@@ -137,14 +142,20 @@ export function Navigation() {
             <Button 
               variant="outline" 
               className="flex-1 rounded-xl h-14 text-base border-accent text-accent hover:bg-accent/10"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                window.open("https://github.com/hidayahos", "_blank");
+              }}
             >
               GitHub
             </Button>
             <Button 
               variant="glow"
               className="flex-1 rounded-xl h-14 text-base"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                handleDownloadClick();
+              }}
             >
               Download
             </Button>

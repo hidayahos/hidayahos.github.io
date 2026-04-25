@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://hidayah.os/sitemap.xml
+
+# Respect robots.txt
+Crawl-delay: 0
+User-agent: *
