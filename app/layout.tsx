@@ -26,6 +26,9 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hidayahos.github.io"),
+  verification: {
+    google: "E0Dnt6NfaWsOaTYS84XxWmH5Q9i1pLn-ueWW4ZGWe60",
+  },
   title: 'Hidayah OS | The Modern Islamic Linux Distribution',
   description: 'Hidayah OS (Nur 1.0) is a privacy-focused, beautiful, and lightweight Linux distribution based on Debian, designed for the global Muslim community. Featuring the Emerald Luxe UI.',
   keywords: 'Islamic Linux, Hidayah OS, Emerald Luxe, Privacy OS, Linux for Muslims, Debian XFCE, Debian KDE, Halal OS',
