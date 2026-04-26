@@ -24,7 +24,10 @@ export function Navigation() {
   }, []);
 
   const handleDownloadClick = () => {
-    window.open("https://mega.co.nz/#!o0omCQYb!YLCm-DmbXumGnUaXUheyvxldTwZk2HEul8BGFCEWd98", "_blank");
+    const downloadSection = document.getElementById('download');
+    if (downloadSection) {
+      downloadSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (

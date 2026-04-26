@@ -62,7 +62,7 @@ export function CtaSection() {
 
                 <div className="flex flex-col sm:flex-row items-start gap-4">
                   <a 
-                    href="https://mega.co.nz/#!o0omCQYb!YLCm-DmbXumGnUaXUheyvxldTwZk2HEul8BGFCEWd98"
+                    href="https://mega.nz/file/YsJEyKLR#txHaYb1moM7acfKFCh5hKujNfRIAVYzbEXpgmysaZcU"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -70,17 +70,24 @@ export function CtaSection() {
                       size="lg"
                       className="bg-accent hover:bg-accent/90 text-background px-8 h-14 text-base rounded-full group"
                     >
-                      Download v1.0 (Nur)
+                      Download KDE
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </a>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="h-14 px-8 text-base rounded-full border-accent/50 hover:bg-accent/5"
+                  <a
+                    href="https://mega.nz/file/ko5DxT4K#LesqFRchwqrkYvfnNOPP1at96iGhMeT-RR05kJPKz8c"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Join our community
-                  </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="h-14 px-8 text-base rounded-full border-accent/50 hover:bg-accent/5"
+                    >
+                      Download XFCE
+                      <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </a>
                 </div>
 
                 <p className="text-sm text-muted-foreground mt-8 font-mono">
