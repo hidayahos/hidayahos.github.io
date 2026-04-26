@@ -6,8 +6,8 @@
 
 # Test info
 
-- Name: verify_sections.spec.ts >> verify sections order and lazy loading
-- Location: verify_sections.spec.ts:3:5
+- Name: verify_icons.spec.ts >> verify site icons and metadata
+- Location: verify_icons.spec.ts:3:5
 
 # Error details
 
