@@ -198,14 +198,14 @@ export function HeroSection() {
         {/* Arabic Bismillah with OS Icon */}
         <div className="mb-6 flex items-center justify-between gap-4 lg:gap-12">
           {/* Bismillah Text */}
-          <h1 
+          <div
             className={`text-left text-[clamp(3rem,7vw,5.5rem)] font-display leading-[1.1] tracking-tight text-accent transition-all duration-1000 flex-shrink ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ fontFamily: 'var(--font-scheherazade)', fontWeight: 700 }}
           >
             بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
-          </h1>
+          </div>
           
           {/* OS Logo with enhanced flickering glow - positioned far right */}
           <div 
@@ -217,7 +217,7 @@ export function HeroSection() {
             <div className="icon-flicker p-2">
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hidayah_os_512x512-v9gWXJBnLgqgAD9CIEOpoaxmm0rbnA.png"
-                alt="Hidayah OS Logo"
+                alt="Hidayah OS Logo — Islamic Linux Distribution" fetchPriority="high"
                 className="w-32 h-32 lg:w-44 lg:h-44 xl:w-52 xl:h-52 object-contain filter drop-shadow-[0_0_20px_rgba(201,168,76,0.4)]"
                 loading="eager"
               />
@@ -227,19 +227,19 @@ export function HeroSection() {
 
         {/* Main headline */}
         <div className="mb-12">
-          <h2 
+          <h1
             className={`text-left text-[clamp(2.5rem,5vw,4rem)] font-display leading-[1.2] tracking-tight text-foreground transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block">Hidayah OS</span>
+            <span className="block">Hidayah OS — Privacy-First Islamic Linux</span>
             <span className="block whitespace-nowrap">
               Your OS is{" "}
               <span className="relative inline-block">
                 <BlurWord word={words[wordIndex]} trigger={wordIndex} />
               </span>
             </span>
-          </h2>
+          </h1>
         </div>
 
         {/* Tagline */}
