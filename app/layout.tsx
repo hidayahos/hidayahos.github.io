@@ -64,8 +64,8 @@ export const metadata: Metadata = {
     canonical: 'https://hidayahos.github.io',
   },
   icons: {
-    icon: '/icon.svg',
-    shortcut: '/icon.svg',
+    icon: '/hidayah-os-icon.png',
+    shortcut: '/hidayah-os-icon.png',
     apple: '/apple-icon.png',
   },
 }
