@@ -9,15 +9,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
-    minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year for static images
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  swcMinify: true,
-  compress: true,
-  productionBrowserSourceMaps: false,
-  poweredByHeader: false,
   reactStrictMode: true,
 }
 

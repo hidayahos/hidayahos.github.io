@@ -9,10 +9,11 @@ const steps = [
     subtitle: "the ISO",
     description: "Get Hidayah OS v1.0 (Nur) from the official MEGA link. Verify the SHA256 checksum to ensure integrity and authenticity.",
     code: `# Download Hidayah OS v1.0 (Nur)
-$ wget "https://mega.co.nz/#!o0omCQYb!YLCm-DmbXumGnUaXUheyvxldTwZk2HEul8BGFCEWd98"
+# Example for KDE Edition:
+$ wget "https://mega.nz/file/YsJEyKLR#txHaYb1moM7acfKFCh5hKujNfRIAVYzbEXpgmysaZcU"
 
 # Verify SHA256
-$ echo "2fe5bb6152bae474f2719ef6b2edf74b8b958d433fa9451fa7ecec714a3ea04d  hidayah-os-1.0-nur-amd64.iso" | sha256sum -c`,
+$ echo "48fe4bc785c7a642eaf82947d2a2dfd677bbe208fc60122eb0d13833b84d93e2  hidayah-os-1.0-nur-amd64-kde.iso" | sha256sum -c`,
   },
   {
     number: "02",
@@ -20,7 +21,7 @@ $ echo "2fe5bb6152bae474f2719ef6b2edf74b8b958d433fa9451fa7ecec714a3ea04d  hidaya
     subtitle: "to your device",
     description: "Boot from USB using the Calamares installer. It guides you through setup including Guardian PIN configuration for settings protection.",
     code: `# Write to USB (Linux/Mac)
-$ sudo dd if=hidayah-os-1.0-nur-amd64.iso of=/dev/sdX \
+$ sudo dd if=hidayah-os-1.0-nur-amd64-kde.iso of=/dev/sdX \
   bs=4M status=progress
 
 # Write to USB (Windows)
