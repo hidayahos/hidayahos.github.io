@@ -10,10 +10,11 @@ const apps = [
   { name: "Thunderbird", category: "Email" },
   { name: "KDE Connect", category: "Sync" },
   { name: "Ark", category: "Archive" },
-  { name: "Dolphin", category: "File Manager" },
+  { name: "Dolphin", category: "Files" },
   { name: "Spectacle", category: "Screenshots" },
   { name: "KCalc", category: "Calculator" },
-  { name: "Okular", category: "PDF Reader" },
+  { name: "Okular", category: "PDF" },
+  { name: "Konsole", category: "Terminal" },
   { name: "Quran Reader", category: "Islamic" },
   { name: "Tasbih Counter", category: "Islamic" },
 ];
