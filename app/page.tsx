@@ -2,9 +2,13 @@
 
 import { Navigation } from "@/components/landing/navigation";
 import { HeroSection } from "@/components/landing/hero-section";
-import { FeaturesSection } from "@/components/landing/features-section";
+import { HeroStatsBar } from "@/components/landing/hero-stats-bar";
+import { FlavorsSection } from "@/components/landing/flavors-section";
+import { IslamicFeaturesSection } from "@/components/landing/islamic-features-section";
+import { IslamicShieldSection } from "@/components/landing/islamic-shield-section";
+import { SecurityShowcaseSection } from "@/components/landing/security-showcase-section";
+import { SpecsHardwareSection } from "@/components/landing/specs-hardware-section";
 import { HowItWorksSection } from "@/components/landing/how-it-works-section";
-import { SecuritySection } from "@/components/landing/security-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { MetricsSection } from "@/components/landing/metrics-section";
 import { IntegrationsSection } from "@/components/landing/integrations-section";
@@ -34,9 +38,37 @@ export default function Home() {
       <Navigation />
       <HeroSection />
 
-      {/* Lazy load below-the-fold sections */}
+      {/* Task 1: Hero Features Bar */}
+      <HeroStatsBar />
+
+      {/* Task 2: Two Flavors Section */}
       <LazyLoadSection>
-        <FeaturesSection />
+        <FlavorsSection />
+      </LazyLoadSection>
+
+      {/* Task 3: Islamic Features Section */}
+      <LazyLoadSection>
+        <IslamicFeaturesSection />
+      </LazyLoadSection>
+
+      {/* Task 4: Islamic Shield Section */}
+      <LazyLoadSection>
+        <IslamicShieldSection />
+      </LazyLoadSection>
+
+      {/* Task 5 & 6: Security & Guardian PIN */}
+      <LazyLoadSection>
+        <SecurityShowcaseSection />
+      </LazyLoadSection>
+
+      {/* Task 7: Pre-installed Apps Section */}
+      <LazyLoadSection>
+        <IntegrationsSection />
+      </LazyLoadSection>
+
+      {/* Task 8 & 9: Hardware & Specs */}
+      <LazyLoadSection>
+        <SpecsHardwareSection />
       </LazyLoadSection>
 
       <LazyLoadSection>
@@ -48,19 +80,11 @@ export default function Home() {
       </LazyLoadSection>
 
       <LazyLoadSection>
-        <SecuritySection />
-      </LazyLoadSection>
-
-      <LazyLoadSection>
         <TestimonialsSection />
       </LazyLoadSection>
 
       <LazyLoadSection>
         <DevelopersSection />
-      </LazyLoadSection>
-
-      <LazyLoadSection>
-        <IntegrationsSection />
       </LazyLoadSection>
 
       {/* Dynamically loaded with no SSR */}
