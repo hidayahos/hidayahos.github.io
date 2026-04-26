@@ -6,8 +6,8 @@
 
 # Test info
 
-- Name: verify_icons.spec.ts >> verify site icons and metadata
-- Location: verify_icons.spec.ts:3:5
+- Name: verify-meta.spec.ts >> verify metadata in generated index.html
+- Location: verify-meta.spec.ts:5:5
 
 # Error details
 
