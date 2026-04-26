@@ -28,29 +28,46 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://hidayahos.github.io"),
   title: 'Hidayah OS — Privacy-First Islamic Linux Distribution',
   description: 'Hidayah OS is a free, open-source Islamic Linux distribution built on Debian with KDE Plasma. Features halal content filtering, prayer times, Quran integration, and zero telemetry.',
-  keywords: 'Hidayah OS, Islamic Linux, Muslim Linux, halal operating system, Islamic privacy OS, Muslim OS, Islamic distro, halal Linux, privacy Linux for Muslims, Islamic desktop',
+  keywords: 'Hidayah OS, Islamic Linux, Muslim Linux, halal operating system, Islamic privacy OS, Muslim OS, Islamic distro, halal Linux, privacy Linux for Muslims, Islamic desktop, Debian, KDE Plasma, Halal Linux Karachi',
+  authors: [{ name: 'Hidayah OS Project', url: 'https://hidayahos.github.io' }],
+  creator: 'Hidayah OS Project',
+  publisher: 'Hidayah OS Project',
+  category: 'Operating System',
   openGraph: {
     title: 'Hidayah OS — Privacy-First Islamic Linux',
     description: 'An Operating System Aligned With Your Values. Free, open-source Islamic Linux with built-in halal content filtering and prayer integration.',
     url: 'https://hidayahos.github.io',
     siteName: 'Hidayah OS',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/hidayah-os-icon.png', width: 512, height: 512, alt: 'Hidayah OS Logo' }],
     type: 'website',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Hidayah OS — Islamic Linux Distribution',
     description: 'Privacy-first Islamic Linux OS with halal content filtering, prayer times, and Quran integration. Free forever.',
-    images: ['/og-image.png'],
+    images: ['/hidayah-os-icon.png'],
+    creator: '@hidayahos',
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true }
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   alternates: {
-    canonical: 'https://hidayahos.github.io'
-  }
+    canonical: 'https://hidayahos.github.io',
+  },
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/apple-icon.png',
+  },
 }
 
 export const viewport: Viewport = {
@@ -104,7 +121,10 @@ export default function RootLayout({
                 "@type": "Organization",
                 "name": "Hidayah OS Project",
                 "url": "https://hidayahos.github.io"
-              }
+              },
+              "featureList": "Halal content filtering, Athan daemon, Hijri calendar, Quran integration, Zero telemetry, App sandboxing",
+              "softwareVersion": "1.0",
+              "applicationSubCategory": "Islamic Operating System"
             })
           }}
         />

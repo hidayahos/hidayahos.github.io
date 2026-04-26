@@ -40,6 +40,10 @@ export default function Home() {
       </LazyLoadSection>
 
       <LazyLoadSection>
+        <PricingSection />
+      </LazyLoadSection>
+
+      <LazyLoadSection>
         <HowItWorksSection />
       </LazyLoadSection>
 
@@ -53,10 +57,6 @@ export default function Home() {
 
       <LazyLoadSection>
         <DevelopersSection />
-      </LazyLoadSection>
-
-      <LazyLoadSection>
-        <PricingSection />
       </LazyLoadSection>
 
       <LazyLoadSection>

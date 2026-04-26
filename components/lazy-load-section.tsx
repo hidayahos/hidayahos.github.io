@@ -8,23 +8,43 @@ interface LazyLoadSectionProps {
   threshold?: number;
 }
 
+/**
+ * LazyLoadSection
+ *
+ * Optimized for SEO and Performance.
+ * Uses IntersectionObserver to trigger animations/high-priority effects,
+ * but ensures content is present in the DOM for SEO (SSG).
+ *
+ * We use 'content-visibility: auto' for modern browser performance benefits
+ * while keeping the content accessible to search engines.
+ */
 export function LazyLoadSection({
   children,
   className = "",
   threshold = 0.1,
 }: LazyLoadSectionProps) {
-  const [isVisible, setIsVisible] = useState(false);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // If IntersectionObserver is not supported, just show it
+    if (!("IntersectionObserver" in window)) {
+      setHasBeenVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setHasBeenVisible(true);
           observer.unobserve(entry.target);
         }
       },
-      { threshold }
+      {
+        threshold,
+        // Start loading slightly before it enters the viewport
+        rootMargin: "200px 0px"
+      }
     );
 
     if (ref.current) {
@@ -39,11 +59,20 @@ export function LazyLoadSection({
       ref={ref}
       className={className}
       style={{
-        opacity: isVisible ? 1 : 0.3,
-        transition: "opacity 0.3s ease-out",
+        opacity: hasBeenVisible ? 1 : 0.4,
+        transition: "opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
+        // SEO: Keep content in DOM but use modern CSS for rendering optimization
+        // @ts-ignore - contentVisibility is a newer CSS property
+        contentVisibility: hasBeenVisible ? "visible" : "auto",
+        containIntrinsicSize: "0 500px",
       }}
     >
-      {isVisible ? children : <div className="min-h-screen" />}
+      {/*
+        We always render children for SEO (so they are in the static HTML).
+        The 'content-visibility' property handles the performance optimization
+        by skipping rendering of off-screen elements.
+      */}
+      {children}
     </div>
   );
 }
