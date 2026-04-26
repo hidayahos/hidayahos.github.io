@@ -1,0 +1,16 @@
+{
+  "name": "Hidayah OS",
+  "short_name": "Hidayah",
+  "description": "Privacy-First Islamic Linux Distribution",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1f0a",
+  "theme_color": "#c9a84c",
+  "icons": [
+    {
+      "src": "/hidayah-os-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
