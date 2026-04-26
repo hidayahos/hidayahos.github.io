@@ -261,7 +261,7 @@ export function HeroSection() {
       >
         <div className="max-w-[1400px] mx-auto flex items-start gap-10 lg:gap-20">
           {[
-            { value: "1.0", label: "Current Version" },
+            { value: "1.0 (Nur)", label: "Current Version" },
             { value: "1650+", label: "Packages Included" },
             { value: "7", label: "Islamic Daemons" },
           ].map((stat, idx) => (
