@@ -68,6 +68,9 @@ export const metadata: Metadata = {
     shortcut: '/hidayah-os-icon.png',
     apple: '/apple-icon.png',
   },
+  verification: {
+    google: 'E0Dnt6NfaWsOaTYS84XxWmH5Q9i1pLn-ueWW4ZGWe60',
+  },
 }
 
 export const viewport: Viewport = {
