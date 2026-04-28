@@ -62,36 +62,32 @@ export function CtaSection() {
 
                 <div className="flex flex-col sm:flex-row items-start gap-4">
                   <a 
-                    href="https://mega.nz/file/YsJEyKLR#txHaYb1moM7acfKFCh5hKujNfRIAVYzbEXpgmysaZcU"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#download"
                   >
                     <Button
                       size="lg"
                       className="bg-accent hover:bg-accent/90 text-background px-8 h-14 text-base rounded-full group"
                     >
-                      Download KDE
+                      Download XFCE
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </a>
                   <a
-                    href="https://mega.nz/file/ko5DxT4K#LesqFRchwqrkYvfnNOPP1at96iGhMeT-RR05kJPKz8c"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#download"
                   >
                     <Button
                       size="lg"
                       variant="outline"
                       className="h-14 px-8 text-base rounded-full border-accent/50 hover:bg-accent/5"
                     >
-                      Download XFCE
+                      Download KDE
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </a>
                 </div>
 
-                <p className="text-sm text-muted-foreground mt-8 font-mono">
-                  100% free, 100% open source, 100% privacy
+                <p className="text-sm text-muted-foreground mt-8 font-mono text-[10px] uppercase tracking-widest">
+                  100% Free • Open Source • Privacy Hardened
                 </p>
               </div>
 

@@ -1,21 +1,21 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { Shield, Lock, ShieldAlert, Key, Fingerprint, EyeOff, CheckCircle2, AlertCircle } from "lucide-react";
+import { Shield, Lock, ShieldAlert, Key, Fingerprint, EyeOff, CheckCircle2, AlertCircle, Cpu, Network, Globe } from "lucide-react";
 
 const securityFeatures = [
-  "AppArmor mandatory access control (14+ profiles)",
+  "Tor Daemon: Global SOCKS5 proxy (127.0.0.1:9050)",
+  "Privacy Exit Nodes: US, DE, NL, CH, IS, SE, NO, FI",
+  "UFW/GUFW: Default deny incoming, IPv6 enabled",
+  "Firefox ESR: Hardened with Enhanced Tracking Protection",
+  "Cryptsetup: LUKS full-disk encryption support",
   "Firejail application sandboxing",
-  "nftables firewall",
-  "sysctl kernel hardening (dmesg_restrict, ASLR, SYN cookies, RP filter)",
+  "AppArmor mandatory access control",
+  "Zero telemetry — 100% data sovereignty",
+  "No proprietary software included",
   "MAC address randomization on every boot",
-  "SSH hardened (no root login, no password auth)",
-  "Minimum TLS 1.2 enforced",
-  "Core dumps disabled",
-  "Password quality policy (10+ chars, 3 classes)",
   "auditd security auditing",
-  "Zero telemetry — guaranteed",
-  "No proprietary software",
+  "sysctl kernel hardening",
 ];
 
 export function SecurityShowcaseSection() {
@@ -49,7 +49,7 @@ export function SecurityShowcaseSection() {
                 Privacy & <span className="text-accent">Security.</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Professional-grade hardening. Hidayah OS is pre-configured with industry-standard security policies.
+                Professional-grade privacy. Hidayah OS is pre-configured with industry-standard security policies and anonymity tools.
               </p>
             </div>
 
@@ -89,13 +89,13 @@ export function SecurityShowcaseSection() {
                   <div className="flex items-start gap-4">
                     <Fingerprint className="w-5 h-5 text-accent mt-1 shrink-0" />
                     <p className="text-lg text-muted-foreground">
-                      bcrypt-encrypted PIN protects all security settings.
+                      bcrypt-encrypted PIN protects all core security settings.
                     </p>
                   </div>
                   <div className="flex items-start gap-4">
                     <AlertCircle className="w-5 h-5 text-red-500 mt-1 shrink-0" />
                     <p className="text-lg text-muted-foreground">
-                      5 wrong attempts = 24 hour lockout.
+                      Security lockout triggers after 5 failed attempts.
                     </p>
                   </div>
                 </div>
@@ -104,8 +104,8 @@ export function SecurityShowcaseSection() {
                   {[
                     "Required to disable any filtering rule",
                     "Required to change DNS settings",
-                    "Set during Calamares installation",
-                    "Cannot be bypassed without PIN",
+                    "Configure during first boot",
+                    "Kernel-level enforcement",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-muted-foreground font-mono text-sm">
                       <span className="w-1.5 h-1.5 bg-accent rounded-full" />
@@ -116,7 +116,7 @@ export function SecurityShowcaseSection() {
 
                 <div className="flex items-center gap-3 p-4 bg-background/50 border border-accent/20 rounded">
                   <EyeOff className="w-5 h-5 text-accent" />
-                  <span className="text-xs font-mono uppercase tracking-widest text-accent">Status: Locked</span>
+                  <span className="text-xs font-mono uppercase tracking-widest text-accent">Status: Hardened</span>
                 </div>
               </div>
             </div>

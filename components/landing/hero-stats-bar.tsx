@@ -4,9 +4,9 @@ import { useEffect, useState, useRef } from "react";
 import { Package, Shield, Moon, Monitor, EyeOff } from "lucide-react";
 
 const stats = [
-  { icon: Package, value: "1650+", label: "Packages Included" },
+  { icon: Package, value: "1172/987", label: "Packages Included" },
   { icon: Shield, value: "6", label: "Shield Layers" },
-  { icon: Moon, value: "3", label: "Islamic Daemons" },
+  { icon: Moon, value: "4 Custom", label: "Islamic Apps" },
   { icon: Monitor, value: "2", label: "Desktop Flavors" },
   { icon: EyeOff, value: "0", label: "Telemetry" },
 ];

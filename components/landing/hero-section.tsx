@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { IslamicGeometricBackground } from "./islamic-geometric-background";
 
-const words = ["aligned", "private", "protected", "islamic"];
+const words = ["Privacy", "Security", "Freedom", "Stability", "Purpose"];
+
+const STAGGER = 30;
+const DURATION = 400;
+const GRADIENT_HOLD = 1200;
 
 function BlurWord({ word, trigger }: { word: string; trigger: number }) {
   const letters = word.split("");
-  const STAGGER = 35;      // reduced from 45ms to decrease animation overhead
-  const DURATION = 400;    // reduced from 500ms for faster load
-  const GRADIENT_HOLD = STAGGER * letters.length + DURATION + 150;
-
   const [letterStates, setLetterStates] = useState<{ opacity: number; blur: number }[]>(
     letters.map(() => ({ opacity: 0, blur: 20 }))
   );
@@ -151,6 +152,9 @@ export function HeroSection() {
         />
       </video>
 
+      {/* Islamic geometric pattern overlay */}
+      <IslamicGeometricBackground />
+
       {/* Dark overlay on video for better text contrast */}
       <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/60 via-black/40 to-transparent pointer-events-none" />
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/30 via-transparent to-black/60 pointer-events-none" />
@@ -191,7 +195,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-foreground/60">
             <span className="w-8 h-px bg-foreground/30" />
-            Privacy-First Linux for Muslims
+            Privacy-Hardened Islamic Linux Distribution
           </span>
         </div>
         
@@ -204,7 +208,7 @@ export function HeroSection() {
             }`}
             style={{ fontFamily: 'var(--font-scheherazade)', fontWeight: 700 }}
           >
-            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
           </div>
           
           {/* OS Logo with enhanced flickering glow - positioned far right */}
@@ -232,7 +236,7 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block">Hidayah OS — Privacy-First Islamic Linux</span>
+            <span className="block">Hidayah OS — Privacy-Hardened Islamic Linux</span>
             <span className="block whitespace-nowrap">
               Your OS is{" "}
               <span className="relative inline-block">
@@ -248,7 +252,7 @@ export function HeroSection() {
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          An Operating System Aligned With Your Values
+          The Nur 1.0 Release — Beautiful, Stable, and Purposed
         </p>
         </div>
       </div>
@@ -262,8 +266,8 @@ export function HeroSection() {
         <div className="max-w-[1400px] mx-auto flex items-start gap-10 lg:gap-20">
           {[
             { value: "1.0 (Nur)", label: "Current Version" },
-            { value: "1650+", label: "Packages Included" },
-            { value: "7", label: "Islamic Daemons" },
+            { value: "1172/987", label: "Packages Included" },
+            { value: "4", label: "Islamic Apps" },
           ].map((stat, idx) => (
             <div key={stat.label} className="flex flex-col gap-2 fade-in-up hover-lift" style={{ animationDelay: `${idx * 100}ms` }}>
               <span className="text-3xl lg:text-4xl font-display text-glow-white float">{stat.value}</span>
@@ -274,8 +278,6 @@ export function HeroSection() {
           ))}
         </div>
       </div>
-
-      {/* Scroll indicator */}
 
     </section>
   );

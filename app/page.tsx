@@ -7,6 +7,7 @@ import { FlavorsSection } from "@/components/landing/flavors-section";
 import { IslamicFeaturesSection } from "@/components/landing/islamic-features-section";
 import { IslamicShieldSection } from "@/components/landing/islamic-shield-section";
 import { SecurityShowcaseSection } from "@/components/landing/security-showcase-section";
+import { DownloadSection } from "@/components/landing/download-section";
 import { SpecsHardwareSection } from "@/components/landing/specs-hardware-section";
 import { HowItWorksSection } from "@/components/landing/how-it-works-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
@@ -38,35 +39,40 @@ export default function Home() {
       <Navigation />
       <HeroSection />
 
-      {/* Task 1: Hero Features Bar */}
+      {/* Hero Features Bar */}
       <HeroStatsBar />
 
-      {/* Task 2: Two Flavors Section */}
+      {/* Two Flavors Section */}
       <LazyLoadSection>
         <FlavorsSection />
       </LazyLoadSection>
 
-      {/* Task 3: Islamic Features Section */}
+      {/* Islamic Features Section */}
       <LazyLoadSection>
         <IslamicFeaturesSection />
       </LazyLoadSection>
 
-      {/* Task 4: Islamic Shield Section */}
+      {/* Islamic Shield Section */}
       <LazyLoadSection>
         <IslamicShieldSection />
       </LazyLoadSection>
 
-      {/* Task 5 & 6: Security & Guardian PIN */}
+      {/* Security & Guardian PIN */}
       <LazyLoadSection>
         <SecurityShowcaseSection />
       </LazyLoadSection>
 
-      {/* Task 7: Pre-installed Apps Section */}
+      {/* Download Section */}
+      <LazyLoadSection>
+        <DownloadSection />
+      </LazyLoadSection>
+
+      {/* Pre-installed Apps Section */}
       <LazyLoadSection>
         <IntegrationsSection />
       </LazyLoadSection>
 
-      {/* Task 8 & 9: Hardware & Specs */}
+      {/* Hardware & Specs */}
       <LazyLoadSection>
         <SpecsHardwareSection />
       </LazyLoadSection>
