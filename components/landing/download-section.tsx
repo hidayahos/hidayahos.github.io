@@ -10,28 +10,28 @@ const downloads = [
     edition: "XFCE Edition",
     recommended: true,
     filename: "HidayahOS-1.0-Nur-XFCE-amd64.iso",
-    size: "1.1 GB",
-    md5: "946d8d82894bfed1249d2d3a9b883572",
-    sha256: "4142c57158fae01b8c040d7487b129a424dc272032a7f8f1b6db6372a351a802",
-    url: "https://mega.nz/folder/k5QHmaQC#D8SyRFpiDIWjnVvVKup-aA",
+    size: "975 MB",
+    md5: "Available on MEGA",
+    sha256: "7a0d4e036c72a2a47aefb184287f758356da53d7c73b09bec0380bd4694924a7",
+    url: "https://mega.nz/file/shZmGKhb#djqUBUHFViQBu5VZpEDLnGhWlOMELh5XN6232ZkGeH4",
     requirements: {
       ram: "2 GB",
       cpu: "64-bit Dual Core",
-      storage: "2 GB (Live Mode)"
+      storage: "8 GB (Live Mode)"
     }
   },
   {
     edition: "KDE Plasma Edition",
     recommended: false,
-    filename: "HidayahOS-1.0-Nur-amd64.iso",
-    size: "1.4 GB",
+    filename: "HidayahOS-1.0-Nur-KDE-amd64.iso",
+    size: "1.5 GB",
     md5: "Available on MEGA",
     sha256: "Available on MEGA",
-    url: "https://mega.nz/folder/k5QHmaQC#D8SyRFpiDIWjnVvVKup-aA",
+    url: "https://mega.nz/file/l9p1CJJL#TzrLWCWvX7fBKGrnmpYqVhoTB2tZBhWn8BzCPeDOnDg",
     requirements: {
       ram: "4 GB",
       cpu: "64-bit Dual Core",
-      storage: "2 GB (Live Mode)"
+      storage: "8 GB (Live Mode)"
     }
   }
 ];
@@ -76,7 +76,7 @@ export function DownloadSection() {
             <div>
               <h4 className="text-yellow-500 font-display text-lg mb-1 uppercase tracking-wider">Live-Only Release</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Hidayah OS 1.0 (Nur) is currently distributed as a <span className="text-foreground font-bold">Live ISO only</span>. It does not include an installer for permanent disk installation. We are working on adding the Calamares installer in a future update.
+                Hidayah OS 1.0 (Nur) is currently distributed as a <span className="text-foreground font-bold">Live ISO only</span>. A permanent system installer is not yet included. We are working on adding Calamares installer support in a future update.
               </p>
             </div>
           </div>
@@ -130,7 +130,7 @@ export function DownloadSection() {
                   <span className="block text-accent uppercase text-[9px] mb-1 tracking-widest font-bold">SHA256 Checksum</span>
                   <div className="flex items-center justify-between gap-4">
                     <span className="truncate opacity-70">{dl.sha256}</span>
-                    {dl.sha256.startsWith('41') && (
+                    {dl.sha256 !== "Available on MEGA" && (
                       <button
                         onClick={() => copyToClipboard(dl.sha256)}
                         title="Copy SHA256"
@@ -145,7 +145,7 @@ export function DownloadSection() {
                   <span className="block text-accent uppercase text-[9px] mb-1 tracking-widest font-bold">MD5 Checksum</span>
                   <div className="flex items-center justify-between gap-4">
                     <span className="truncate opacity-70">{dl.md5}</span>
-                    {dl.md5.startsWith('94') && (
+                    {dl.md5 !== "Available on MEGA" && (
                       <button
                         onClick={() => copyToClipboard(dl.md5)}
                         title="Copy MD5"
