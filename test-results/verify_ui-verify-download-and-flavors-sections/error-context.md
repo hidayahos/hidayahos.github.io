@@ -6,8 +6,8 @@
 
 # Test info
 
-- Name: verify-meta.spec.ts >> verify metadata in generated index.html
-- Location: verify-meta.spec.ts:5:5
+- Name: verify_ui.spec.ts >> verify download and flavors sections
+- Location: verify_ui.spec.ts:3:5
 
 # Error details
 
