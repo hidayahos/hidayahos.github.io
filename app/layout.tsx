@@ -118,7 +118,7 @@ export default function RootLayout({
               },
               "description": "Privacy-hardened Islamic Linux distribution with prayer times, Quran reader, and zero telemetry.",
               "url": "https://hidayahos.github.io",
-              "downloadUrl": "https://mega.nz/folder/k5QHmaQC#D8SyRFpiDIWjnVvVKup-aA",
+              "downloadUrl": "https://mega.nz/file/x04gAZQD#A01yfX_ndx27WSug_AJZGyZVguR0KVnkopZ0MqfJiBg",
               "license": "https://www.gnu.org/licenses/gpl-3.0.html",
               "author": {
                 "@type": "Organization",

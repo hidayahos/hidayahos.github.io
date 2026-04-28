@@ -9,7 +9,7 @@ const flavors = [
     id: "xfce",
     name: "XFCE Edition",
     badge: "RECOMMENDED",
-    size: "1.1 GB",
+    size: "1.3 GB",
     packages: "987",
     desktop: "XFCE 4.18",
     bestFor: "Daily drivers, older hardware, and users who want more software out of the box",
@@ -21,7 +21,7 @@ const flavors = [
       "Lighter on RAM (2GB min)",
       "Classic performance",
       "Comprehensive toolkit",
-      "300MB smaller ISO"
+      "Calamares installer included"
     ],
     highlight: true,
   },
@@ -29,7 +29,7 @@ const flavors = [
     id: "kde",
     name: "KDE Plasma Edition",
     badge: "MODERN & POLISHED",
-    size: "1.4 GB",
+    size: "1.7 GB",
     packages: "1,172",
     desktop: "KDE Plasma 5.27",
     bestFor: "Users who want a modern, visually polished desktop with animations",
@@ -41,7 +41,7 @@ const flavors = [
       "Kate text editor",
       "Breeze GTK/Qt theme",
       "Firefox ESR",
-      "Tor Browser Launcher"
+      "Calamares installer included"
     ],
     highlight: false,
   },
@@ -87,7 +87,7 @@ export function FlavorsSection() {
           <div className="mt-8 p-4 border border-accent/20 bg-accent/5 rounded-lg flex items-start gap-4 max-w-2xl">
             <Info className="w-6 h-6 text-accent shrink-0 mt-0.5" />
             <p className="text-sm text-muted-foreground leading-relaxed">
-              <span className="text-accent font-bold">Important:</span> Hidayah OS is currently a <span className="text-foreground font-semibold uppercase tracking-wider">Live-only experience</span>. It does not yet include a permanent system installer.
+              <span className="text-accent font-bold">Important:</span> Both editions include the <span className="text-foreground font-semibold uppercase tracking-wider">Calamares installer</span> for permanent disk installation. Boot the Live session and click "Install Hidayah OS" to install.
             </p>
           </div>
         </div>
