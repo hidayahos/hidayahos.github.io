@@ -1,151 +1,78 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Github, Twitter, MessageSquare } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const footerLinks = {
-  Product: [
+  Project: [
     { name: "Features", href: "#features" },
-    { name: "Installation", href: "#how-it-works" },
-    { name: "Security", href: "#security" },
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "Editions", href: "#flavors" },
+    { name: "Security", href: "#security-showcase" },
+    { name: "Download", href: "#download" },
   ],
-  Developers: [
-    { name: "GitHub", href: "https://github.com/hidayahos" },
+  Resources: [
     { name: "Documentation", href: "https://github.com/hidayahos/hidayah-os/wiki" },
-    { name: "Contribute", href: "https://github.com/hidayahos/hidayah-os" },
-    { name: "Issues", href: "https://github.com/hidayahos/hidayah-os/issues" },
+    { name: "Issue Tracker", href: "https://github.com/hidayahos/hidayah-os/issues" },
+    { name: "Source Code", href: "https://github.com/hidayahos" },
+    { name: "Build Summary", href: "#download" },
   ],
   Community: [
     { name: "Discord", href: "https://discord.gg/hwjFEXwtBq" },
     { name: "Forum", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Twitter", href: "#" },
+    { name: "Contact", href: "#contact-form" },
   ],
   Legal: [
-    { name: "Privacy", href: "https://github.com/hidayahos/hidayah-os/blob/main/LICENSE" },
-    { name: "License (GPL-3.0)", href: "https://github.com/hidayahos/hidayah-os/blob/main/LICENSE" },
-    { name: "Terms", href: "https://github.com/hidayahos/hidayah-os/blob/main/LICENSE" },
+    { name: "Privacy Policy", href: "https://github.com/hidayahos/hidayah-os/blob/main/LICENSE" },
+    { name: "GPL-3.0 License", href: "https://github.com/hidayahos/hidayah-os/blob/main/LICENSE" },
+    { name: "Terms of Use", href: "https://github.com/hidayahos/hidayah-os/blob/main/LICENSE" },
   ],
 };
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com/hidayahos" },
-  { name: "Discord", href: "https://discord.gg/hwjFEXwtBq" },
-  { name: "Twitter", href: "#" },
+  { name: "GitHub", href: "https://github.com/hidayahos", icon: Github },
+  { name: "Discord", href: "https://discord.gg/hwjFEXwtBq", icon: MessageSquare },
+  { name: "Twitter", href: "#", icon: Twitter },
 ];
-
-function AnimatedWaveCanvas() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const isVisibleRef = useRef(true);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    // Intersection observer to pause animation when not visible
-    const observer = new IntersectionObserver(([entry]) => {
-      isVisibleRef.current = entry.isIntersecting;
-    }, { threshold: 0 });
-    observer.observe(canvas);
-
-    let animationId: number;
-    let time = 0;
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const animate = () => {
-      if (!isVisibleRef.current) {
-        animationId = requestAnimationFrame(animate);
-        return;
-      }
-
-      const width = canvas.offsetWidth;
-      const height = canvas.offsetHeight;
-      ctx.clearRect(0, 0, width, height);
-
-      ctx.strokeStyle = "rgba(100, 200, 150, 0.3)";
-      ctx.lineWidth = 1;
-
-      for (let wave = 0; wave < 3; wave++) {
-        ctx.beginPath();
-        for (let x = 0; x <= width; x += 5) {
-          const y =
-            height * 0.5 +
-            Math.sin(x * 0.01 + time + wave * 0.5) * 30 +
-            Math.sin(x * 0.02 + time * 1.5 + wave) * 20;
-          if (x === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        ctx.stroke();
-      }
-
-      time += 0.02;
-      animationId = requestAnimationFrame(animate);
-    };
-    animate();
-
-    return () => {
-      window.removeEventListener("resize", resize);
-      cancelAnimationFrame(animationId);
-      observer.disconnect();
-    };
-  }, []);
-
-  return <canvas ref={canvasRef} className="w-full h-full" />;
-}
 
 export function FooterSection() {
   return (
-    <footer className="relative bg-black">
-      {/* Panoramic banner image */}
-      <div className="relative w-full h-[340px] md:h-[420px] overflow-hidden">
-        <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upscaled%20Image%20%2810%29-UnDKstODkIENp5xqTYUEpt0Sm8tNOw.png"
-          alt="Bioluminescent landscape"
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Gradient fade to black at bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
-        {/* Subtle dark vignette on sides */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
-      </div>
-
+    <footer className="relative bg-black pt-20">
       {/* Footer content — black background, white text with animations */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
+        {/* Arabic Bismillah Center */}
+        <div className="text-center mb-20 fade-in-up">
+          <div className="text-4xl md:text-6xl text-accent font-display mb-4" style={{ fontFamily: 'var(--font-scheherazade)' }}>
+            بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+          </div>
+          <p className="text-xs font-mono text-muted-foreground uppercase tracking-[0.3em]">
+            In the name of Allah, the Most Gracious, the Most Merciful
+          </p>
+        </div>
+
         {/* Main Footer with scroll animations */}
-        <div className="py-16 lg:py-20">
+        <div className="py-16 lg:py-20 border-t border-white/5">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-12 lg:gap-8">
             {/* Brand Column with fade-in-up animation */}
             <div className="col-span-2 fade-in-up" style={{ animationDelay: '0ms' }}>
               <a href="#" className="inline-flex items-center gap-2 mb-6 hover-lift">
-                <span className="text-2xl font-display text-accent float">Hidayah OS</span>
+                <span className="text-3xl font-display text-accent">Hidayah OS</span>
               </a>
 
               <p className="text-foreground/50 leading-relaxed mb-8 max-w-xs text-sm fade-in-left" style={{ animationDelay: '100ms' }}>
-                Built with AI, guided by faith. A privacy-first Islamic Linux distribution for Muslims worldwide.
+                The Nur 1.0 Release. A privacy-hardened Islamic Linux distribution designed for the global Muslim community.
               </p>
 
-              {/* Social Links with stagger animation */}
-              <div className="flex gap-6">
+              {/* Social Icons */}
+              <div className="flex gap-4">
                 {socialLinks.map((link, idx) => (
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-sm text-foreground/40 hover:text-accent transition-all flex items-center gap-1 group hover-lift card-shine bounce-anim"
+                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-accent hover:border-accent transition-all group"
                     style={{ animationDelay: `${idx * 100}ms` }}
                   >
-                    {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                    <link.icon className="w-5 h-5" />
                   </a>
                 ))}
               </div>
@@ -154,20 +81,15 @@ export function FooterSection() {
             {/* Link Columns with stagger animation */}
             {Object.entries(footerLinks).map(([title, links], colIdx) => (
               <div key={title} className="fade-in-up" style={{ animationDelay: `${(colIdx + 2) * 100}ms` }}>
-                <h3 className="text-sm font-medium text-white mb-6 float">{title}</h3>
+                <h3 className="text-xs font-mono uppercase tracking-widest text-white/30 mb-6">{title}</h3>
                 <ul className="space-y-4">
                   {links.map((link, idx) => (
                     <li key={link.name} className="fade-in-left" style={{ animationDelay: `${colIdx * 100 + idx * 50}ms` }}>
                       <a
                         href={link.href}
-                        className="text-sm text-white/40 hover:text-white transition-all inline-flex items-center gap-2 hover-lift group"
+                        className="text-sm text-white/50 hover:text-white transition-all inline-flex items-center gap-2 hover-lift group"
                       >
                         {link.name}
-                        {"badge" in link && link.badge && (
-                          <span className="text-xs px-2 py-0.5 bg-white text-black rounded-full pulse-glow">
-                            {link.badge}
-                          </span>
-                        )}
                       </a>
                     </li>
                   ))}
@@ -178,16 +100,23 @@ export function FooterSection() {
         </div>
 
         {/* Bottom Bar with animations */}
-        <div className="py-8 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4 fade-in-up" style={{ animationDelay: '600ms' }}>
-          <p className="text-sm text-foreground/30">
-            &copy; 2026 Hidayah OS Project. GPL-3.0 License.
-          </p>
+        <div className="py-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 fade-in-up" style={{ animationDelay: '600ms' }}>
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <p className="text-sm text-foreground/30">
+              &copy; 2026 Hidayah OS Project. Open Source under GPL-3.0.
+            </p>
+            <p className="text-[10px] font-mono text-accent/50 uppercase tracking-widest">
+              Made with faith and code
+            </p>
+          </div>
 
-          <div className="flex items-center gap-4 text-sm text-foreground/30 hover-glow pulse-glow">
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-accent bounce-anim" />
-              Shield active
-            </span>
+          <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4 text-sm text-foreground/30 hover-glow pulse-glow">
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-accent" />
+                Shield Active
+              </span>
+            </div>
           </div>
         </div>
       </div>

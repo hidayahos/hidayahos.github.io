@@ -26,16 +26,16 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hidayahos.github.io"),
-  title: 'Hidayah OS | The Modern Islamic Linux Distribution',
-  description: 'Hidayah OS (Nur 1.0) is a privacy-focused, beautiful, and lightweight Linux distribution based on Debian, designed for the global Muslim community. Featuring the Emerald Luxe UI.',
-  keywords: 'Islamic Linux, Hidayah OS, Emerald Luxe, Privacy OS, Linux for Muslims, Debian XFCE, Debian KDE, Halal OS',
-  authors: [{ name: 'Ubaid Ur Rehman', url: 'https://hidayahos.github.io' }],
-  creator: 'Ubaid Ur Rehman',
+  title: 'Hidayah OS | Privacy-Hardened Islamic Linux Distribution',
+  description: 'Hidayah OS 1.0 (Nur) is a privacy-hardened Islamic Linux distribution based on Debian 12, featuring custom Islamic tools, zero telemetry, and two beautiful editions: KDE Plasma and XFCE.',
+  keywords: 'Islamic Linux, Hidayah OS, Nur 1.0, Privacy OS, Linux for Muslims, Debian 12, KDE Plasma, XFCE, Halal Linux, Islamic Operating System',
+  authors: [{ name: 'Hidayah OS Project', url: 'https://hidayahos.github.io' }],
+  creator: 'Hidayah OS Project',
   publisher: 'Hidayah OS Project',
   category: 'Operating System',
   openGraph: {
-    title: 'Hidayah OS - The Light of Linux',
-    description: 'Download the Nur 1.0 release. Beautiful, Stable, and Purposed.',
+    title: 'Hidayah OS 1.0 (Nur) - Privacy-Hardened Islamic Linux',
+    description: 'The light of Linux. A beautiful, stable, and purposed OS for the global Muslim community.',
     url: 'https://hidayahos.github.io/',
     siteName: 'Hidayah OS',
     images: [{ url: '/hidayah-os-icon.png', width: 512, height: 512, alt: 'Hidayah OS Logo' }],
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hidayah OS - The Light of Linux',
-    description: 'Download the Nur 1.0 release. Beautiful, Stable, and Purposed.',
+    title: 'Hidayah OS 1.0 (Nur) - Privacy-Hardened Islamic Linux',
+    description: 'Privacy-first Islamic Linux distribution with custom Islamic tools and zero telemetry.',
     images: ['/hidayah-os-icon.png'],
     creator: '@hidayahos',
   },
@@ -116,16 +116,16 @@ export default function RootLayout({
                 "price": "0",
                 "priceCurrency": "USD"
               },
-              "description": "Privacy-first Islamic Linux distribution with halal content filtering, prayer times, and Quran integration",
+              "description": "Privacy-hardened Islamic Linux distribution with prayer times, Quran reader, and zero telemetry.",
               "url": "https://hidayahos.github.io",
-              "downloadUrl": "https://github.com/hidayahos/hidayah-os/releases",
+              "downloadUrl": "https://mega.nz/folder/k5QHmaQC#D8SyRFpiDIWjnVvVKup-aA",
               "license": "https://www.gnu.org/licenses/gpl-3.0.html",
               "author": {
                 "@type": "Organization",
                 "name": "Hidayah OS Project",
                 "url": "https://hidayahos.github.io"
               },
-              "featureList": "Halal content filtering, Athan daemon, Hijri calendar, Quran integration, Zero telemetry, App sandboxing",
+              "featureList": "Prayer Times, Quran Reader, Hijri Calendar, Tor Daemon, UFW Firewall, Zero Telemetry",
               "softwareVersion": "1.0",
               "applicationSubCategory": "Islamic Operating System"
             })
