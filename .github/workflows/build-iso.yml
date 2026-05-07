@@ -40,19 +40,23 @@ jobs:
             zstd
 
       # ── 3. Download official Debian Live ISO ───────────────────────────────
-      - name: Download Debian Live ISO
+            - name: Download Debian Live ISO
         run: |
           EDITION="${{ github.event.inputs.edition }}"
           echo "Building edition: $EDITION"
 
-          # Official Debian 12 Live ISO (bookworm)
-          if [ "$EDITION" = "kde" ]; then
-            ISO_URL="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.10.0-amd64-kde.iso"
-            ISO_NAME="debian-live-kde.iso"
-          else
-            ISO_URL="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.10.0-amd64-xfce.iso"
-            ISO_NAME="debian-live-xfce.iso"
+          # Fetch the exact ISO filename from the Debian mirror
+          ISO_FILE=$(wget -qO- https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/ \
+            | grep -oP "debian-live-\d+\.\d+\.\d+-amd64-${EDITION}\.iso" \
+            | head -1)
+
+          if [ -z "$ISO_FILE" ]; then
+            echo "❌ Could not find a live ISO for edition '$EDITION'"
+            exit 1
           fi
+
+          ISO_URL="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/$ISO_FILE"
+          ISO_NAME="debian-live-${EDITION}.iso"
 
           echo "Downloading: $ISO_URL"
           wget -q --show-progress -O "$ISO_NAME" "$ISO_URL"
