@@ -39,8 +39,8 @@ jobs:
             grub-pc-bin grub-efi-amd64-bin mtools \
             zstd
 
-      # ── 3. Download official Debian Live ISO ───────────────────────────────
-            - name: Download Debian Live ISO
+            # ── 3. Download official Debian Live ISO ───────────────────────────────
+      - name: Download Debian Live ISO
         run: |
           EDITION="${{ github.event.inputs.edition }}"
           echo "Building edition: $EDITION"
