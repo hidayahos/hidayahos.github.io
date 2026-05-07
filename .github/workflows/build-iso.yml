@@ -1,4 +1,4 @@
-name: Build Hidayah OS ISO
+name: Build Hidayah Os ISO
 
 on:
   workflow_dispatch:
