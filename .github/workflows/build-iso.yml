@@ -110,134 +110,134 @@ jobs:
 
           # ── OS Identity ──
           cat > "$OVL/etc/os-release" <<'EOF'
-NAME="Hidayah OS"
-VERSION="1.0 (Nur)"
-ID=hidayah
-ID_LIKE=debian
-PRETTY_NAME="Hidayah OS 1.0 Nur"
-VERSION_ID="1.0"
-HOME_URL="https://hidayahos.github.io"
-SUPPORT_URL="https://hidayahos.github.io"
-BUG_REPORT_URL="https://github.com/darkmaster0345/hidayah-os/issues"
-VERSION_CODENAME=nur
-DEBIAN_CODENAME=bookworm
-EOF
+          NAME="Hidayah OS"
+          VERSION="1.0 (Nur)"
+          ID=hidayah
+          ID_LIKE=debian
+          PRETTY_NAME="Hidayah OS 1.0 Nur"
+          VERSION_ID="1.0"
+          HOME_URL="https://hidayahos.github.io"
+          SUPPORT_URL="https://hidayahos.github.io"
+          BUG_REPORT_URL="https://github.com/darkmaster0345/hidayah-os/issues"
+          VERSION_CODENAME=nur
+          DEBIAN_CODENAME=bookworm
+          EOF
 
           cat > "$OVL/etc/lsb-release" <<'EOF'
-DISTRIB_ID=HidayahOS
-DISTRIB_RELEASE=1.0
-DISTRIB_CODENAME=nur
-DISTRIB_DESCRIPTION="Hidayah OS 1.0 Nur"
-EOF
+          DISTRIB_ID=HidayahOS
+          DISTRIB_RELEASE=1.0
+          DISTRIB_CODENAME=nur
+          DISTRIB_DESCRIPTION="Hidayah OS 1.0 Nur"
+          EOF
 
           echo "hidayah" > "$OVL/etc/hostname"
 
           cat > "$OVL/etc/issue" <<'EOF'
-Hidayah OS 1.0 "Nur" \n \l
+          Hidayah OS 1.0 "Nur" \n \l
 
-Assalamu Alaikum! Welcome to Hidayah OS.
-A Debian-based, privacy-hardened distribution with Islamic integration.
+          Assalamu Alaikum! Welcome to Hidayah OS.
+          A Debian-based, privacy-hardened distribution with Islamic integration.
 
-EOF
+          EOF
 
           # ── Kernel hardening ──
           cat > "$OVL/etc/sysctl.d/99-hidayah-hardening.conf" <<'EOF'
-net.ipv4.ip_forward = 0
-net.ipv4.conf.all.accept_source_route = 0
-net.ipv4.conf.default.accept_source_route = 0
-net.ipv6.conf.all.accept_source_route = 0
-net.ipv6.conf.default.accept_source_route = 0
-net.ipv4.conf.all.rp_filter = 1
-net.ipv4.conf.default.rp_filter = 1
-net.ipv4.conf.all.accept_redirects = 0
-net.ipv4.conf.default.accept_redirects = 0
-net.ipv6.conf.all.accept_redirects = 0
-net.ipv6.conf.default.accept_redirects = 0
-net.ipv4.conf.all.send_redirects = 0
-net.ipv4.conf.default.send_redirects = 0
-net.ipv4.icmp_echo_ignore_broadcasts = 1
-net.ipv4.icmp_ignore_bogus_error_responses = 1
-net.ipv4.conf.all.log_martians = 1
-net.ipv4.conf.default.log_martians = 1
-kernel.randomize_va_space = 2
-kernel.kptr_restrict = 2
-kernel.dmesg_restrict = 1
-kernel.unprivileged_bpf_disabled = 1
-dev.tty.ldisc_autoload = 0
-vm.unprivileged_userfaultfd = 0
-fs.protected_hardlinks = 1
-fs.protected_symlinks = 1
-fs.protected_fifos = 2
-fs.protected_regular = 2
-kernel.perf_event_paranoid = 3
-fs.suid_dumpable = 0
-EOF
+          net.ipv4.ip_forward = 0
+          net.ipv4.conf.all.accept_source_route = 0
+          net.ipv4.conf.default.accept_source_route = 0
+          net.ipv6.conf.all.accept_source_route = 0
+          net.ipv6.conf.default.accept_source_route = 0
+          net.ipv4.conf.all.rp_filter = 1
+          net.ipv4.conf.default.rp_filter = 1
+          net.ipv4.conf.all.accept_redirects = 0
+          net.ipv4.conf.default.accept_redirects = 0
+          net.ipv6.conf.all.accept_redirects = 0
+          net.ipv6.conf.default.accept_redirects = 0
+          net.ipv4.conf.all.send_redirects = 0
+          net.ipv4.conf.default.send_redirects = 0
+          net.ipv4.icmp_echo_ignore_broadcasts = 1
+          net.ipv4.icmp_ignore_bogus_error_responses = 1
+          net.ipv4.conf.all.log_martians = 1
+          net.ipv4.conf.default.log_martians = 1
+          kernel.randomize_va_space = 2
+          kernel.kptr_restrict = 2
+          kernel.dmesg_restrict = 1
+          kernel.unprivileged_bpf_disabled = 1
+          dev.tty.ldisc_autoload = 0
+          vm.unprivileged_userfaultfd = 0
+          fs.protected_hardlinks = 1
+          fs.protected_symlinks = 1
+          fs.protected_fifos = 2
+          fs.protected_regular = 2
+          kernel.perf_event_paranoid = 3
+          fs.suid_dumpable = 0
+          EOF
 
           # ── Module blacklist ──
           cat > "$OVL/etc/modprobe.d/hidayah-blacklist.conf" <<'EOF'
-blacklist bluetooth
-blacklist btusb
-blacklist btrtl
-blacklist btintel
-blacklist btbcm
-blacklist bnep
-blacklist rfcomm
-blacklist hidp
-blacklist firewire-core
-blacklist firewire-ohci
-blacklist firewire-sbp2
-blacklist dv1394
-blacklist raw1394
-blacklist video1394
-blacklist thunderbolt
-blacklist dccp
-blacklist sctp
-blacklist rds
-blacklist tipc
-EOF
+          blacklist bluetooth
+          blacklist btusb
+          blacklist btrtl
+          blacklist btintel
+          blacklist btbcm
+          blacklist bnep
+          blacklist rfcomm
+          blacklist hidp
+          blacklist firewire-core
+          blacklist firewire-ohci
+          blacklist firewire-sbp2
+          blacklist dv1394
+          blacklist raw1394
+          blacklist video1394
+          blacklist thunderbolt
+          blacklist dccp
+          blacklist sctp
+          blacklist rds
+          blacklist tipc
+          EOF
 
           # ── SDDM autologin ──
           cat > "$OVL/etc/sddm.conf.d/hidayah.conf" <<'EOF'
-[Autologin]
-User=hidayah
-Session=plasma
+          [Autologin]
+          User=hidayah
+          Session=plasma
 
-[Theme]
-Current=breeze
-EOF
+          [Theme]
+          Current=breeze
+          EOF
 
           # ── Prayer daemon (stub) ──
           cat > "$OVL/usr/local/bin/hidayah-prayer-daemon.sh" <<'SCRIPT'
-#!/bin/bash
-# Hidayah OS Prayer Time Daemon — stub for ISO (configure city after install)
-CITY="${HIDAYAH_CITY:-Karachi}"
-while true; do
-  sleep 300
-done
-SCRIPT
+          #!/bin/bash
+          # Hidayah OS Prayer Time Daemon — stub for ISO (configure city after install)
+          CITY="${HIDAYAH_CITY:-Karachi}"
+          while true; do
+            sleep 300
+          done
+          SCRIPT
           chmod +x "$OVL/usr/local/bin/hidayah-prayer-daemon.sh"
 
           # ── Quran ayah daemon (stub) ──
           cat > "$OVL/usr/local/bin/hidayah-quran-daemon.sh" <<'SCRIPT'
-#!/bin/bash
-# Hidayah OS Quran Ayah Daemon — writes daily ayah to /var/run/hidayah/
-mkdir -p /var/run/hidayah
-echo "Indeed, with hardship will be ease." > /var/run/hidayah/quran-ayah.txt
-echo "إِنَّ مَعَ الْعُسْرِ يُسْرًا" > /var/run/hidayah/quran-arabic.txt
-echo "Quran 94:6" > /var/run/hidayah/quran-ref.txt
-while true; do sleep 86400; done
-SCRIPT
+          #!/bin/bash
+          # Hidayah OS Quran Ayah Daemon — writes daily ayah to /var/run/hidayah/
+          mkdir -p /var/run/hidayah
+          echo "Indeed, with hardship will be ease." > /var/run/hidayah/quran-ayah.txt
+          echo "إِنَّ مَعَ الْعُسْرِ يُسْرًا" > /var/run/hidayah/quran-arabic.txt
+          echo "Quran 94:6" > /var/run/hidayah/quran-ref.txt
+          while true; do sleep 86400; done
+          SCRIPT
           chmod +x "$OVL/usr/local/bin/hidayah-quran-daemon.sh"
 
           # ── Autostart entries ──
           cat > "$OVL/home/hidayah/.config/autostart/hidayah-prayer.desktop" <<'EOF'
-[Desktop Entry]
-Type=Application
-Name=Hidayah Prayer Daemon
-Exec=/usr/local/bin/hidayah-prayer-daemon.sh
-Hidden=false
-X-GNOME-Autostart-enabled=true
-EOF
+          [Desktop Entry]
+          Type=Application
+          Name=Hidayah Prayer Daemon
+          Exec=/usr/local/bin/hidayah-prayer-daemon.sh
+          Hidden=false
+          X-GNOME-Autostart-enabled=true
+          EOF
 
           # ── Blocklist placeholder ──
           echo "# Hidayah OS blocklist — populated on first boot" \
