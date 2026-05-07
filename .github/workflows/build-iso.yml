@@ -63,7 +63,7 @@ jobs:
           echo "Download complete. Size: $(du -sh $ISO_NAME | cut -f1)"
           df -h /
 
-      # ── 4. Extract ISO contents ────────────────────────────────────────────
+           # ── 4. Extract ISO contents (then delete ISO to save space) ───────────
       - name: Extract ISO
         run: |
           EDITION="${{ github.event.inputs.edition }}"
@@ -71,27 +71,25 @@ jobs:
 
           mkdir -p iso_extract work/overlay
 
-          # Mount and copy ISO contents
           sudo mount -o loop,ro "$ISO_NAME" /mnt
           sudo cp -a /mnt/. iso_extract/
           sudo umount /mnt
-          sudo chmod -R u+w iso_extract/
+          
+          # FIX: Take ownership of extracted files
+          sudo chown -R $(whoami):$(id -gn) iso_extract/
+          chmod -R u+w iso_extract/
+
+          # DELETE the original ISO to free ~3 GB
+          rm -f "$ISO_NAME"
 
           echo "=== ISO structure ==="
-          ls -la iso_extract/
           ls -la iso_extract/live/
 
-          # Verify critical files
-          [ -f iso_extract/live/vmlinuz ]   && echo "✓ vmlinuz found"   || { echo "✗ vmlinuz MISSING"; exit 1; }
-          [ -f iso_extract/live/initrd.img ] && echo "✓ initrd found"   || { echo "✗ initrd MISSING"; exit 1; }
+          [ -f iso_extract/live/vmlinuz ] && echo "✓ vmlinuz found" || { echo "✗ vmlinuz MISSING"; exit 1; }
+          [ -f iso_extract/live/initrd.img ] && echo "✓ initrd found" || { echo "✗ initrd MISSING"; exit 1; }
           [ -f iso_extract/live/filesystem.squashfs ] && echo "✓ squashfs found" || { echo "✗ squashfs MISSING"; exit 1; }
 
-          # HSQS magic header check
-          MAGIC=$(hexdump -C iso_extract/live/filesystem.squashfs | head -1 | awk '{print $2$3$4$5}')
-          echo "squashfs magic: $MAGIC"
-          echo "68737173" | grep -q "68737173" && echo "✓ HSQS magic valid"
-
-          echo "ISO extracted successfully."
+          echo "ISO extracted. Disk usage:"
           df -h /
 
       # ── 5. Build Hidayah overlay squashfs ─────────────────────────────────
